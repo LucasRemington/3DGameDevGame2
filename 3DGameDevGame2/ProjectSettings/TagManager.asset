@@ -7,6 +7,8 @@ TagManager:
   - PlayerAttack
   - Hostile
   - Wall
+  - Block
+  - Key
   layers:
   - Default
   - TransparentFX

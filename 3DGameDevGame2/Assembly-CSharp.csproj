@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\NewScroll.cs" />
      <Compile Include="Assets\Scripts\Scripts\BlockFollow1.cs" />
+     <Compile Include="Assets\Scripts\Scripts\ButtonVanisher.cs" />
      <Compile Include="Assets\Scripts\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Scripts\Enemy1FOV.cs" />
      <Compile Include="Assets\Scripts\Scripts\EnemyController.cs" />

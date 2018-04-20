@@ -31,7 +31,7 @@ public class PlayerControl : MonoBehaviour {
 	{
 		//Ray directionRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 		//RaycastHit currentTarget;
-
+		//Turn();
 		rigBod.angularVelocity = Vector3.zero;
 
 		if (Input.GetKey (KeyCode.Mouse1)) 
@@ -51,7 +51,8 @@ public class PlayerControl : MonoBehaviour {
 			if (Physics.Raycast (directionRay, out currentTarget, 200)) 
 			{
 				target = currentTarget.transform;
-				//transform.LookAt (currentTarget.point);
+				transform.LookAt (currentTarget.point);
+
 				if (currentTarget.collider.tag == "Hostile") 
 				{
 					targetIsEnemy = true;
@@ -123,5 +124,17 @@ public class PlayerControl : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	private void Turn () 
+	{
+		Vector2 positionOnScreen = Camera.main.WorldToViewportPoint (transform.position);
+		Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint (Input.mousePosition);
+		float angle = AngleBetweenTwoPoints (positionOnScreen, mouseOnScreen);
+		transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, angle));
+	}
+
+	float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
+		return Mathf.Atan2 (a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
 	}
 }
