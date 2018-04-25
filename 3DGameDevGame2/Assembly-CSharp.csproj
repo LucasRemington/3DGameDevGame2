@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Scripts\BlockFollow1.cs" />
      <Compile Include="Assets\Scripts\Scripts\ButtonVanisher.cs" />
      <Compile Include="Assets\Scripts\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Scripts\destinationMarker.cs" />
      <Compile Include="Assets\Scripts\Scripts\Enemy1FOV.cs" />
      <Compile Include="Assets\Scripts\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Scripts\EnemyControllerTest.cs" />
@@ -62,6 +63,7 @@
      <Compile Include="Assets\Scripts\Scripts\Lifetime.cs" />
      <Compile Include="Assets\Scripts\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\Scripts\Rotator.cs" />
+     <Compile Include="Assets\Scripts\Scripts\TempInvisibleWall.cs" />
      <Compile Include="Assets\Scripts\Scripts\Transparency.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
