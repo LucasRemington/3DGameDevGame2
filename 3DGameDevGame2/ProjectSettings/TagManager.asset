@@ -9,6 +9,9 @@ TagManager:
   - Wall
   - Block
   - Key
+  - SmallEnemyAttack1
+  - Door
+  - Chest
   layers:
   - Default
   - TransparentFX

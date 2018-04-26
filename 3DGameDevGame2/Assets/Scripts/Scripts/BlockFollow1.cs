@@ -8,12 +8,12 @@ public class BlockFollow1 : MonoBehaviour {
 	public GameObject player;
 	public bool dragging = false;
 	private bool canDrag;
+	private float lockY;
 
 
 	// Use this for initialization
 	void Start () {
-
-
+		lockY = transform.position.y;
 	}
 	
 	// Update is called once per frame
@@ -35,6 +35,10 @@ public class BlockFollow1 : MonoBehaviour {
 		{
 			transform.position = player.transform.position + offset;
 		}
+
+		/*if (transform.position.y < lockY && dragging == false) {
+			transform.position = new Vector3 (0f, lockY, 0f);
+		}*/
 	}
 
 	void OnTriggerEnter (Collider other)

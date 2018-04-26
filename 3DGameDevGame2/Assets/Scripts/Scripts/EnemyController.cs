@@ -22,6 +22,9 @@ public class EnemyController : MonoBehaviour {
 	public Transform attackSpawn;
 	public GameObject attackHitbox;
 	public float attackCooldown;
+	public GameObject[] tempHealth;
+	private int onHealth;
+	private bool hurtCooldown;
 
 	void Start () 
 	{
@@ -30,8 +33,7 @@ public class EnemyController : MonoBehaviour {
 		botAgent.destination = destinations [currentDestination].position;
 		StartCoroutine (AILoop ());
 		StartCoroutine (AttackLoop ());
-
-
+		onHealth = -1;
 	}
 	
 	// Update is called once per frame
@@ -41,6 +43,7 @@ public class EnemyController : MonoBehaviour {
 		{
 			isDead = true;
 			Destroy (gameObject);
+			PlayerControl.Gold = PlayerControl.Gold + 15;
 		}
 		fovScript = gameObject.GetComponentInChildren <Enemy1FOV> ();
 		if (fovScript.playerInSight == false) 
@@ -63,12 +66,21 @@ public class EnemyController : MonoBehaviour {
 	}
 	void OnTriggerEnter (Collider other)
 	{
-		if (other.tag == "PlayerAttack") 
+		if (other.tag == "PlayerAttack" && hurtCooldown == false) 
 		{
 			inCombat = true;
-			health = health - 10.0f;
+			health = health - 20.0f;
+			onHealth++;
+			tempHealth [onHealth].SetActive(false);
+			StartCoroutine (hurtCool ());
 		}
 	}
+	private IEnumerator hurtCool(){
+		hurtCooldown = true;
+		yield return new WaitForSeconds(1.5f);
+		hurtCooldown = false;
+	}
+
 	private IEnumerator AILoop () 
 	{
 		if (isDead == false) 

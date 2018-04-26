@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Scripts\FadeReset.cs" />
      <Compile Include="Assets\Scripts\Scripts\Lifetime.cs" />
      <Compile Include="Assets\Scripts\Scripts\PlayerControl.cs" />
+     <Compile Include="Assets\Scripts\Scripts\pressurebridge.cs" />
      <Compile Include="Assets\Scripts\Scripts\Rotator.cs" />
      <Compile Include="Assets\Scripts\Scripts\TempInvisibleWall.cs" />
      <Compile Include="Assets\Scripts\Scripts\Transparency.cs" />
